@@ -33,9 +33,9 @@ console.log(avolittyHasher("🔥"));
 
 The module function accepts one argument.
 
-The argument is a `boolean`, `function`, `number`, `object`, `string` or `undefined` message payload to hash.
+The argument data type is `boolean`, `function`, `number`, `object`, `string` or `undefined` and the value is a message payload to hash.
 
-The return value is a `string` checksum digest from the argument.
+The return value is an 8-character hexadecimal `string` checksum digest from the argument.
 
 #### Tests
 
@@ -170,4 +170,16 @@ node test
 
 # Input: "undefined"
 # Output: "6062746e"
+
+# Input: "🔥"
+# Output: "045bc745"
+
+# Input: "0🔥"
+# Output: "b23fc4d2"
+
+# Input: "🔥0"
+# Output: "2a83c1f8"
+
+# Input: "🔥🔥"
+# Output: "b0a419f2"
 ```
