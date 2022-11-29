@@ -1,9 +1,10 @@
 {
   "bugs": {
-    "url": "https://github.com/avolitty/hasher/issues"
+    "url": "https://github.com/avolitty/avolitty-hasher/issues"
   },
   "description": "Create fast 32-bit checksums with a unique hashing algorithm.",
-  "homepage": "https://github.com/avolitty/hasher/blob/main/README.md",
+  "funding": "https://www.patreon.com/avolitty",
+  "homepage": "https://github.com/avolitty/avolitty-hasher/blob/main/README.md",
   "keywords": [
     "array",
     "browser",
@@ -22,11 +23,11 @@
     "utf-16"
   ],
   "license": "MIT",
-  "main": "hasher.js",
+  "main": "avolitty-hasher.js",
   "name": "avolitty-hasher",
   "repository": {
     "type": "git",
-    "url": "git://github.com/avolitty/hasher.git"
+    "url": "git://github.com/avolitty/avolitty-hasher.git"
   },
   "version": "1.0.0"
 }

@@ -25,7 +25,11 @@ const avolittyHasher = function(_0_1) {
         _0_3 = 1;
 
         if (typeof _0_1 === "object") {
-            _0_1 = JSON.stringify(_0_1);
+            try {
+                _0_1 = JSON.stringify(_0_1);
+            } catch (_0_1) {
+                _0_1 = "0";
+            }
         }
     }
 
