@@ -1,5 +1,8 @@
 ## About
 
+#### Contributor
+[William Parsons](avolitty@gmail.com)
+
 #### Description
 Create variable-length checksums from all data types with a fast and unique hashing algorithm.
 
@@ -10,9 +13,12 @@ Create variable-length checksums from all data types with a fast and unique hash
 - Minified code
 - No dependencies
 - Optimized for JavaScript UTF-16 code units
-- Option to set hash digest length between `1` and `2147483647`
+- Option to set hash digest length between `0` and `2147483647`
 - Option to ignore object key sort order
 - Vast difference in hashed output from minor change to input
+
+#### Funding
+[Patreon](https://www.patreon.com/avolitty)
 
 #### License
 [MIT](https://github.com/avolitty/avolitty-hasher/blob/main/LICENSE)
@@ -20,6 +26,7 @@ Create variable-length checksums from all data types with a fast and unique hash
 ## Installation
 
 #### Browser
+[JSFiddle](https://jsfiddle.net/avolitty/g1d3eL7b/8/)
 ``` console
 git clone https://github.com/avolitty/avolitty-hasher.git
 ```
@@ -28,6 +35,7 @@ git clone https://github.com/avolitty/avolitty-hasher.git
 ```
 
 #### Node.js
+[NPM][https://www.npmjs.com/package/avolitty-hasher]
 ``` console
 npm install avolitty-hasher
 ```
@@ -52,11 +60,11 @@ The second argument data type is `object` with the following options.
 }
 ```
 
-The optional `ignoreObjectKeySortOrder` data type is `boolean` and the value is `true` to ignore the sort order of object keys.
-The default value is `false`.
+The optional `ignoreObjectKeySortOrder` data type is `boolean` and the value is `true` to ignore the sort order of object keys.  
+The default value is `false`.  
 When `true`, salt is added to avoid collisions from the same object when `false`.
 
-The required `outputLength` data type is `number` and the value is a whole number greater than `0`.
+The required `outputLength` data type is `number` and the value is a positive whole number.
 
 The return value is a hexadecimal `string` checksum digest.
 

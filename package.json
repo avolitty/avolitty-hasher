@@ -5,6 +5,7 @@
   "bugs": {
     "url": "https://github.com/avolitty/avolitty-hasher/issues"
   },
+  "dependencies": {},
   "description": "Create variable-length checksums from all data types with a fast and unique hashing algorithm.",
   "funding": "https://www.patreon.com/avolitty",
   "homepage": "https://github.com/avolitty/avolitty-hasher/blob/main/README.md",
