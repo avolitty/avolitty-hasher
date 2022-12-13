@@ -62,12 +62,14 @@ The return value is a hexadecimal `string` checksum digest.
 
 ``` console
 node test
+```
 
+``` javascript
 Input: avolittyHasher(global, {"outputLength": 8})
 Output: "20c83a54"
 
-Input: avolittyHasher("global", {"outputLength": 8}) Output: 
-"54dd196c"
+Input: avolittyHasher("global", {"outputLength": 8})
+Output: "54dd196c"
 
 Input: avolittyHasher(global.clearTimeout, {"outputLength": 8})
 Output: "4097ee92"
