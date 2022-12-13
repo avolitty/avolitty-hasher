@@ -3,12 +3,12 @@ const _0_0 = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "
 const avolittyHasher = function(_0_1, _0_2) {
 	let _0_3 = []
 	let _0_4 = " "
-	let _0_5 = _0_2.outputLength - 0
+	let _0_5 = _0_2.outputLength
 	let _0_6 = 2
 	let _0_7 = 0
 	let _0_8 = 0
 
-	if (typeof _0_2._0_2_0 == "undefined") {
+	if (_0_2._0_2_0 == void 0) {
 		_0_2._0_2_0 = []
 
 		while (_0_5 != _0_7) {
@@ -16,7 +16,7 @@ const avolittyHasher = function(_0_1, _0_2) {
 		}
 	}
 
-	if (typeof _0_2._0_2_1 != "undefined") {
+	if (_0_2._0_2_1 != void 0) {
 		_0_4 += _0_2._0_2_1
 	}
 
@@ -28,7 +28,7 @@ const avolittyHasher = function(_0_1, _0_2) {
 		if (typeof _0_1 == "object" && _0_1 != null) {
 			_0_3 = Object.keys(_0_1)
 
-			if (typeof _0_3[0] == "undefined") {
+			if (_0_3[0] == void 0) {
 				_0_4 += _0_1 + " "
 			} else if (_0_2.ignoreObjectKeySortOrder == true) {
 				_0_3 = _0_3.sort()
@@ -82,6 +82,6 @@ const avolittyHasher = function(_0_1, _0_2) {
 	return _0_1
 }
 
-if (typeof module != 'undefined' && typeof module.exports != 'undefined') {
+if (typeof module != 'undefined' && module.exports != void 0) {
 	module.exports = avolittyHasher
 }

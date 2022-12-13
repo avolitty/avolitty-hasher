@@ -1,15 +1,22 @@
 {
+  "authors": [
+    "William Parsons <avolitty@gmail.com>"
+  ],
   "bugs": {
     "url": "https://github.com/avolitty/avolitty-hasher/issues"
   },
-  "description": "Create fast 32-bit checksums with a unique hashing algorithm.",
+  "description": "Create variable-length checksums from all data types with a fast and unique hashing algorithm.",
   "funding": "https://www.patreon.com/avolitty",
   "homepage": "https://github.com/avolitty/avolitty-hasher/blob/main/README.md",
   "keywords": [
     "array",
     "browser",
     "checksum",
+    "crypto",
+    "cryptographic",
     "digest",
+    "fast",
+    "fingerprint",
     "function",
     "hash",
     "message",
@@ -18,9 +25,10 @@
     "number",
     "object",
     "payload",
+    "simple",
     "string",
     "sum",
-    "utf-16"
+    "unique"
   ],
   "license": "MIT",
   "main": "avolitty-hasher.js",
@@ -28,6 +36,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/avolitty/avolitty-hasher.git"
+  },
+  "scripts": {
+    "test": "node test"
   },
   "version": "1.0.0"
 }

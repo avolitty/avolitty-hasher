@@ -45,14 +45,16 @@ The first argument data type is `boolean`, `function`, `number`, `object`, `stri
 
 The second argument data type is `object` with the following options.
 
-``` javascript
+``` json
 {
-	"ignoreObjectKeySortOrder": true,
-	"outputLength": 8
+  "ignoreObjectKeySortOrder": true,
+  "outputLength": 8
 }
 ```
 
-The optional `ignoreObjectKeySortOrder` data type is `boolean` and the value is `true` to ignore the sort order of object keys. The default value is `false`. When `true`, salt is added to avoid collisions from the same object when `false`.
+The optional `ignoreObjectKeySortOrder` data type is `boolean` and the value is `true` to ignore the sort order of object keys.
+The default value is `false`.
+When `true`, salt is added to avoid collisions from the same object when `false`.
 
 The required `outputLength` data type is `number` and the value is a whole number greater than `0`.
 
@@ -193,12 +195,6 @@ Output: "eb0f94a9"
 
 Input: avolittyHasher("🔥", {"outputLength": 8})
 Output: "3c210f35"
-
-Input: avolittyHasher("0🔥", {"outputLength": 8})
-Output: "f21ef26d"
-
-Input: avolittyHasher("🔥0", {"outputLength": 8})
-Output: "2ad42adf"
 
 Input: avolittyHasher("🔥🔥", {"outputLength": 8})
 Output: "f2121735"
