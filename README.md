@@ -1,7 +1,18 @@
 ## About
 
 #### Description
-Create fast 32-bit checksums with a unique hashing algorithm.
+Create variable-length checksums from all data types with a fast and unique hashing algorithm.
+
+- All data types and values supported
+- Browser and Node.js support
+- Circular object references supported
+- Fast hashing speed with collision resistance
+- Minified code
+- No dependencies
+- Optimized for JavaScript UTF-16 code units
+- Option to set hash digest length between `1` and `2147483647`
+- Option to ignore object key sort order
+- Vast difference in hashed output from minor change to input
 
 #### License
 [MIT](https://github.com/avolitty/avolitty-hasher/blob/main/LICENSE)
@@ -14,172 +25,199 @@ git clone https://github.com/avolitty/avolitty-hasher.git
 ```
 ``` javascript
 <script src="avolitty-hasher.js" type="text/javascript"></script>
-<script type="text/javascript">console.log(avolittyHasher('🔥'));</script>
 ```
 
-#### Unix
+#### Node.js
 ``` console
-cd
 npm install avolitty-hasher
 ```
 ``` javascript
-const avolittyHasher = require("avolitty-hasher");
-console.log(avolittyHasher("🔥"));
+const avolittyHasher = require("avolitty-hasher")
 ```
 
 ## Usage
 
 #### Details
 
-The module function accepts one argument.
+The module function accepts two arguments.
 
-The argument data type is `boolean`, `function`, `number`, `object`, `string` or `undefined` and the value is a message payload to hash.
+The first argument data type is `boolean`, `function`, `number`, `object`, `string` or `undefined` and the value is a message payload to hash.
 
-The return value is an 8-character hexadecimal `string` checksum digest from the argument.
+The second argument data type is `object` with the following options.
+
+``` javascript
+{
+	"ignoreObjectKeySortOrder": true,
+	"outputLength": 8
+}
+```
+
+The optional `ignoreObjectKeySortOrder` data type is `boolean` and the value is `true` to ignore the sort order of object keys. The default value is `false`. When `true`, salt is added to avoid collisions from the same object when `false`.
+
+The required `outputLength` data type is `number` and the value is a whole number greater than `0`.
+
+The return value is a hexadecimal `string` checksum digest.
 
 #### Tests
 
 ``` console
 node test
 
-# Input: global
-# Output: "4ef376e5"
+Input: avolittyHasher(global, {"outputLength": 8})
+Output: "20c83a54"
 
-# Input: "global"
-# Output: "1d33f94d"
+Input: avolittyHasher("global", {"outputLength": 8}) Output: 
+"54dd196c"
 
-# Input: global.clearTimeout
-# Output: "b09acd0b"
+Input: avolittyHasher(global.clearTimeout, {"outputLength": 8})
+Output: "4097ee92"
 
-# Input: "global.clearTimeout"
-# Output: "bb3e0379"
+Input: avolittyHasher("global.clearTimeout", {"outputLength": 8})
+Output: "e8816253"
 
-# Input: function() {} 
-# Output: "6bd016c6"
+Input: avolittyHasher(function() {}, {"outputLength": 8})
+Output: "76045d2c"
 
-# Input: "function() {}"
-# Output: "571b8c6e" 
+Input: avolittyHasher("function() {}", {"outputLength": 8})
+Output: "92892288"
 
-# Input: function(a) {}
-# Output: "1a30599c"
+Input: avolittyHasher(function(a) {}, {"outputLength": 8})
+Output: "967f8dcc"
 
-# Input: "function(a) {}" 
-# Output: "7232a872"
+Input: avolittyHasher("function(a) {}", {"outputLength": 8})
+Output: "f109ad2f"
 
-# Input: function(a) {return}
-# Output: "87cecc82"
+Input: avolittyHasher(function(a) {return}, {"outputLength": 8})
+Output: "48cf5787"
 
-# Input: "function(a) {return}"
-# Output: "9a99e607"
+Input: avolittyHasher("function(a) {return}", {"outputLength": 8})
+Output: "e28ee00a"
 
-# Input: function(a) { return}
-# Output: "6ca57027"
+Input: avolittyHasher(function(a) { return}, {"outputLength": 8})
+Output: "41087df8"
 
-# Input: "function(a) { return}"
-# Output: "17632e75"
+Input: avolittyHasher("function(a) { return}", {"outputLength": 8})
+Output: "41a229dd"
 
-# Input: {}
-# Output: "d785ce73"
+Input: avolittyHasher({}, {"outputLength": 8})
+Output: "22c3f299"
 
-# Input: "{}"
-# Output: "faf94f16"
+Input: avolittyHasher("{}", {"outputLength": 8})
+Output: "89b780a1"
 
-# Input: {"0": 0}
-# Output: "813dc1b0"
+Input: avolittyHasher({"0": 0}, {"outputLength": 8})
+Output: "3432b2ac"
 
-# Input: {"0": 1}
-# Output: "b69441e6"
+Input: avolittyHasher({"0": 1}, {"outputLength": 8})
+Output: "586bd3f0"
 
-# Input: []
-# Output: "9f3fc4e1"
+Input: avolittyHasher([], {"outputLength": 8})
+Output: "4fa52f4d"
 
-# Input: "[]"
-# Output: "7c27292b"
+Input: avolittyHasher("[]", {"outputLength": 8})
+Output: "05921abb"
 
-# Input: [0]
-# Output: "5c97e6ac"
+Input: avolittyHasher([0], {"outputLength": 8})
+Output: "fb3b2316"
 
-# Input: "[0]"
-# Output: "46a17acc"
+Input: avolittyHasher("[0]", {"outputLength": 8})
+Output: "47639828"
 
-# Input: null
-# Output: "a62dbd09"
+Input: avolittyHasher(null, {"outputLength": 8})
+Output: "93466dc8"
 
-# Input: "null"
-# Output: "2fda4b6f"
+Input: avolittyHasher("null", {"outputLength": 8})
+Output: "229f2295"
 
-# Input: true 
-# Output: "7757b77e"
+Input: avolittyHasher(true, {"outputLength": 8})
+Output: "7e744397"
 
-# Input: "true"
-# Output: "00282633"
+Input: avolittyHasher("true", {"outputLength": 8})
+Output: "229f2295"
 
-# Input: false
-# Output: "b732c91b"
+Input: avolittyHasher(false, {"outputLength": 8})
+Output: "c356fbac"
 
-# Input: "false"
-# Output: "37936028"
+Input: avolittyHasher("false", {"outputLength": 8})
+Output: "0d3f42fd"
 
-# Input: Infinity
-# Output: "c2543036"
+Input: avolittyHasher(Infinity, {"outputLength": 8})
+Output: "a9d97ddf"
 
-# Input: "Infinity"
-# Output: "b8b120c9"
+Input: avolittyHasher("Infinity", {"outputLength": 8})
+Output: "10235f96"
 
-# Input: -Infinity
-# Output: "ac1be099"
+Input: avolittyHasher(-Infinity, {"outputLength": 8})
+Output: "6fcf567d"
 
-# Input: "-Infinity"
-# Output: "9c15fe59"
+Input: avolittyHasher(NaN, {"outputLength": 8})
+Output: "d59ad07b"
 
-# Input: NaN
-# Output: "4ae1d256"
+Input: avolittyHasher("NaN", {"outputLength": 8})
+Output: "59b7041f"
 
-# Input: "NaN"
-# Output: "e466b615"
+Input: avolittyHasher(0, {"outputLength": 8})
+Output: "9346e1e0"
 
-# Input: 0
-# Output: "78101015"
+Input: avolittyHasher("0", {"outputLength": 8})
+Output: "c3ca82be"
 
-# Input: "0"
-# Output: "0a474283"
+Input: avolittyHasher("01", {"outputLength": 8})
+Output: "0d58c61d"
 
-# Input: "01"
-# Output: "428a1ac0"
+Input: avolittyHasher(1, {"outputLength": 8})
+Output: "b8045fb1"
 
-# Input: 1
-# Output: "ae5a8f11"
+Input: avolittyHasher("1", {"outputLength": 8})
+Output: "e888f080"
 
-# Input: "1"
-# Output: "21e2d0ee"
+Input: avolittyHasher("10", {"outputLength": 8})
+Output: "d516b3f7"
 
-# Input: "10"
-# Output: "5bf0a957"
+Input: avolittyHasher("", {"outputLength": 8})
+Output: "2a58c3cd"
 
-# Input: ""
-# Output: "4e5451a8"
+Input: avolittyHasher(void 0, {"outputLength": 8})
+Output: "25cf5ca4"
 
-# Input: void 0
-# Output: "bf41056f"
+Input: avolittyHasher("void 0", {"outputLength": 8})
+Output: "b70586cf"
 
-# Input: "void 0"
-# Output: "a38c9d36"
+Input: avolittyHasher(undefined, {"outputLength": 8})
+Output: "25cf5ca4"
 
-# Input: undefined
-# Output: "bf41056f"
+Input: avolittyHasher("undefined", {"outputLength": 8})
+Output: "eb0f94a9"
 
-# Input: "undefined"
-# Output: "6062746e"
+Input: avolittyHasher("🔥", {"outputLength": 8})
+Output: "3c210f35"
 
-# Input: "🔥"
-# Output: "045bc745"
+Input: avolittyHasher("0🔥", {"outputLength": 8})
+Output: "f21ef26d"
 
-# Input: "0🔥"
-# Output: "b23fc4d2"
+Input: avolittyHasher("🔥0", {"outputLength": 8})
+Output: "2ad42adf"
 
-# Input: "🔥0"
-# Output: "2a83c1f8"
+Input: avolittyHasher("🔥🔥", {"outputLength": 8})
+Output: "f2121735"
 
-# Input: "🔥🔥"
-# Output: "b0a419f2"
-```
+Input: avolittyHasher({"3": "🔥", "2": "🔥", "1": "🔥"}, {"ignoreObjectKeySortOrder": false, "outputLength": 8})
+Output: "b7698e8d"
+
+Input: avolittyHasher({"3": "🔥", "2": "🔥", "1": "🔥"}, {"ignoreObjectKeySortOrder": true, "outputLength": 8})
+Output: "3d9c2d6f"
+
+Input: avolittyHasher({"1": "🔥", "2": "🔥", "3": "🔥"}, {"ignoreObjectKeySortOrder": true, "outputLength": 8})
+Output: "3d9c2d6f"
+
+Input: avolittyHasher("🔥", {"outputLength": 16})
+Output: "7a96eaf3415634b1"
+
+Input: avolittyHasher("🔥", {"outputLength": 32})
+Output: "f6712c40d5920b69630a920e4b227a23"
+
+Input: avolittyHasher("🔥", {"outputLength": 64})
+Output: "fe379d77fa58f02738c6ea777e7dc998617651817869e64bfe2dd10ddaee1310"
+
+Input: avolittyHasher("🔥", {"outputLength": 128})
+Output: "feb370e9cb88f8614300fccc3ca58f86855c5365aef1e698d971a8a7fadc1d393d217222478150f7cdf651b625e38c0854a687b5e458fb28b496edba47dfcff3"
