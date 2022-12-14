@@ -27,7 +27,7 @@ Create variable-length checksums from all data types with a fast and unique hash
 
 #### Browser
 
-[JSFiddle](https://jsfiddle.net/avolitty/g1d3eL7b/8/)
+[JSFiddle](https://jsfiddle.net/avolitty/g1d3eL7b/latest/)
 
 ``` console
 git clone https://github.com/avolitty/avolitty-hasher.git
