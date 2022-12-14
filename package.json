@@ -1,7 +1,5 @@
 {
-  "authors": [
-    "William Parsons <avolitty@gmail.com>"
-  ],
+  "author": "William Parsons <avolitty@gmail.com> (https://twitter.com/avolitty)",
   "bugs": {
     "url": "https://github.com/avolitty/avolitty-hasher/issues"
   },
@@ -41,5 +39,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

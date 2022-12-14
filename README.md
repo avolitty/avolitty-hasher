@@ -1,6 +1,6 @@
 ## About
 
-#### Contributor
+#### Author
 [William Parsons](avolitty@gmail.com)
 
 #### Description
