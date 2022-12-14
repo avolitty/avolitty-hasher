@@ -26,19 +26,25 @@ Create variable-length checksums from all data types with a fast and unique hash
 ## Installation
 
 #### Browser
+
 [JSFiddle](https://jsfiddle.net/avolitty/g1d3eL7b/8/)
+
 ``` console
 git clone https://github.com/avolitty/avolitty-hasher.git
 ```
+
 ``` javascript
 <script src="avolitty-hasher.js" type="text/javascript"></script>
 ```
 
 #### Node.js
-[NPM][https://www.npmjs.com/package/avolitty-hasher]
+
+[NPM](https://www.npmjs.com/package/avolitty-hasher)
+
 ``` console
 npm install avolitty-hasher
 ```
+
 ``` javascript
 const avolittyHasher = require("avolitty-hasher")
 ```
