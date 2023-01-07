@@ -36,7 +36,7 @@ Include the module in Node.js with `require()`.
 const avolittyHasher = require("avolitty-hasher")
 ```
 
-The following example uses code from `test/index.js` to generate hash digests with the `AvolittyHasher()` function from src/avolitty-hasher.js.
+The following example uses code from `test/index.js` to generate hash digests with the `AvolittyHasher()` function from `src/avolitty-hasher.js`.
 
 ``` javascript
 const a = "🥑"
@@ -44,7 +44,7 @@ const b = {
 	"outputLength": 128
 }
 const c = avolittyHasher(a, b)
-console.log(b)
+console.log(c)
 ```
 
 The first argument `a` is a `boolean`, `function`, `number`, `object`, `string` or `undefined` defined as the message payload to hash.
