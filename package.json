@@ -1,12 +1,12 @@
 {
-  "author": "William Parsons <avolitty@gmail.com> (https://twitter.com/avolitty)",
+  "author": "William Parsons <avolitty.com>",
   "bugs": {
     "url": "https://github.com/avolitty/avolitty-hasher/issues"
   },
   "dependencies": {},
   "description": "Create variable-length checksums from all data types with a fast and unique hashing algorithm.",
-  "funding": "https://www.patreon.com/avolitty",
-  "homepage": "https://github.com/avolitty/avolitty-hasher/blob/main/README.md",
+  "funding": "https://avolitty.com/donate/",
+  "homepage": "https://github.com/avolitty/avolitty-hasher/blob/javascript/README.md",
   "keywords": [
     "array",
     "browser",
@@ -34,10 +34,10 @@
   "name": "avolitty-hasher",
   "repository": {
     "type": "git",
-    "url": "git://github.com/avolitty/avolitty-hasher.git"
+    "url": "https://github.com/avolitty/avolitty-hasher.git"
   },
   "scripts": {
     "test": "node test"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

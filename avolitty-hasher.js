@@ -1,85 +1,85 @@
-const _0_0 = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+const a = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
 
-const avolittyHasher = function(_0_1, _0_2) {
-	let _0_3 = []
-	let _0_4 = " "
-	let _0_5 = _0_2.outputLength
-	let _0_6 = 2
-	let _0_7 = 0
-	let _0_8 = 0
+const avolittyHasher = function(b, c) {
+	let d = []
+	let e = " "
+	let f = c.outputLength
+	let g = 2
+	let h = 0
+	let i = 0
 
-	if (_0_2._0_2_0 == void 0) {
-		_0_2._0_2_0 = []
+	if (c._a == void 0) {
+		c._a = []
 
-		while (_0_5 != _0_7) {
-			_0_2._0_2_0[_0_7++] = 0
+		while (f != h) {
+			c._a[h++] = 0
 		}
 	}
 
-	if (_0_2._0_2_1 != void 0) {
-		_0_4 += _0_2._0_2_1
+	if (c._b != void 0) {
+		e += c._b
 	}
 
-	_0_7 = -1
+	h = -1
 
-	if (typeof _0_1 != "string") {
-		_0_8 = 1
+	if (typeof b != "string") {
+		i = 1
 
-		if (typeof _0_1 == "object" && _0_1 != null) {
-			_0_3 = Object.keys(_0_1)
+		if (typeof b == "object" && b != null) {
+			d = Object.keys(b)
 
-			if (_0_3[0] == void 0) {
-				_0_4 += _0_1 + " "
-			} else if (_0_2.ignoreObjectKeySortOrder == true) {
-				_0_3 = _0_3.sort()
-				_0_4 += " "
+			if (d[0] == void 0) {
+				e += b + " "
+			} else if (c.ignoreObjectKeySortOrder == true) {
+				d = d.sort()
+				e += " "
 			}
 
-			_0_8 = _0_3.length
+			i = d.length
 
-			while (++_0_7 != _0_8) {
-				_0_2._0_2_1 = _0_4
+			while (++h != i) {
+				c._b = e
 
-				if (_0_1 != _0_1[_0_3[_0_7]]) {
-					_0_4 = avolittyHasher(_0_1[_0_3[_0_7]], _0_2)
+				if (b != b[d[h]]) {
+					e = avolittyHasher(b[d[h]], c)
 				} else {
-					_0_4 = avolittyHasher(_0_3[_0_7], _0_2)
+					e = avolittyHasher(d[h], c)
 				}
 			}
 
-			_0_1 = _0_4
-			_0_8 = 1
+			b = e
+			i = 1
 		}
 	}
 
-	if (_0_8 == 1) {
-		_0_6 = (_0_6 + (_0_6 >> 1) & 65535) + 56789
-		_0_2._0_2_0[--_0_8] = _0_6
+	if (i == 1) {
+		g = (((g >> 1) + g) & 65535) + 56789
+		c._a[--i] = g
 	}
 
-	_0_1 += _0_4
-	_0_7 = _0_1.length
+	b += e
+	h = b.length
 
-	while (_0_7-- != 0) {
-		_0_6 = _0_1.charCodeAt(_0_7) + (_0_6 + (_0_6 >> 1) & 65535) + 2
+	while (h-- != 0) {
+		g = b.charCodeAt(h) + (((g >> 1) + g) & 65535) + 2
 
-		if (_0_8-- == 0) {
-			_0_8 = _0_5 - 1
+		if (i-- == 0) {
+			i = f - 1
 		}
 
-		_0_2._0_2_0[_0_8] = _0_2._0_2_0[_0_8] + _0_6 & 15
+		c._a[i] = (c._a[i] + g) & 15
 	}
 
-	_0_1 = ""
+	b = ""
 
-	while (_0_5-- != 0) {
-		_0_2._0_2_0[_0_5] = _0_6
-		_0_6 = (_0_2._0_2_0[_0_5] + _0_2._0_2_0[++_0_7] + (_0_6 + (_0_5 + _0_6 >> 1)) & 65535) + 2
-		_0_2._0_2_0[_0_7] = _0_6
-		_0_1 += _0_0[_0_6 & 15]
+	while (f-- != 0) {
+		c._a[f] = g
+		g = (c._a[f] + c._a[++h] + (((f + g) >> 1) + g) & 65535) + 2
+		c._a[h] = g
+		b += a[g & 15]
 	}
 
-	return _0_1
+	return b
 }
 
 if (typeof module != 'undefined' && module.exports != void 0) {
