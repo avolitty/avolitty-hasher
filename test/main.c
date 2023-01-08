@@ -28,8 +28,8 @@ int main() {
 	}
 
 	fclose(a);
-	h = *i;
-	AvolittyHasherB(e, h, ++f, k);
+	g = *i;
+	AvolittyHasherB(e, g, ++f, k);
 
 	while (f-- != 0) {
 		printf("%c", k[f]);

@@ -6,7 +6,7 @@ void AvolittyHasherA(signed short int *a, signed short int *b, signed short int 
 	while (d != g) {
 		f = (signed short int) e[g] + (((f >> 1) + f) & 8191) + 2;
 		h = g++ & c;
-		a[h] = (a[h] + f) & 15;
+		a[h] = (a[h] + f) & 1023;
 	}
 
 	*b = f;
