@@ -16,7 +16,7 @@ Create secure and variable-length checksums using C89 with a fast and unique has
 - Length variant values can be adjusted in the same hashing function
 - Memory-safe with well-defined behavior
 - Minified code
-- Output character length can be 2, 4, 8, 16, 32, 64, 128, 256, 512 or 1024
+- Output character length can be 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 or 1024
 
 #### Funding
 [Avolitty](https://avolitty.com/donate/)
@@ -102,7 +102,7 @@ The value is `0`.
 
 The fourth argument variable `f` is a `signed short int` defined as the character length of the hash digest output.
 
-The default value is `16` with a minimum of `1` and a maximum of `1024`. If the digest output character length needs to change, this value should be in shifted increments (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024) with the same value as defined array lengths in variables `e` and `m`.
+The default value is `16` with a minimum of `1` and a maximum of `1024`. If the digest output character length needs to change, this value is in shifted increments (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024) with the same value as defined array lengths in variables `e` and `m`.
 
 The fifth argument variable `h` is a `signed short int` defined as the casted `size_t` result from each `fread()` iteration before passing as an argument to `AvolittyHasherA()`.
 
@@ -148,14 +148,14 @@ gcc -O3 -o avolitty-hasher -std=c89 src/avolitty-hasher.c test/main.c
 
 It outputs an executable binary file named `avolitty-hasher` in the current directory.
 
-The output from executing `./avolitty-hasher` is a hexadecimal
+The output from executing `./avolitty-hasher` is a hexadecimal hash digest string.
 
 ``` console
 ./avolitty-hasher
 # f72e2e6635be5bb4
 ```
 
-These are the outputs for each character length variant after modifying the lengths in the variables `e` and `k` and the value in the variable `f`.
+These are the outputs for each character length variant after modifying the lengths in the variables `e` and `m` and the value in the variable `f`.
 
 ``` console
 # 1 character
