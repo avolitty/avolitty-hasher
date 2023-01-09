@@ -1,4 +1,4 @@
-const avolittyHasher = require('../avolitty-hasher.js')
+const avolittyHasher = require('../src/avolitty-hasher.js')
 console.log("Input: avolittyHasher(global, {\"outputLength\": 8})")
 console.log("Output: \"" + avolittyHasher(global, {"outputLength": 8}) + "\"\n")
 console.log("Input: avolittyHasher(\"global\", {\"outputLength\": 8})")

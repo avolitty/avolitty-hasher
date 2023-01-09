@@ -30,7 +30,7 @@
     "unique"
   ],
   "license": "MIT",
-  "main": "avolitty-hasher.js",
+  "main": "src/avolitty-hasher.js",
   "name": "avolitty-hasher",
   "repository": {
     "type": "git",
@@ -39,5 +39,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "1.0.3"
+  "version": "1.0.4"
 }
