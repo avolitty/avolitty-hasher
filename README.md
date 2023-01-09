@@ -88,7 +88,7 @@ The first argument variable `e` is a pointer to a `signed short int` array to st
 
 The default value is an empty array with a default length of `16`.
 
-The length is equivalent to the output length and `AvolittyReaderA()` defines it as the bytes for the hash digest output before finalization.
+The length is equivalent to the output length and `AvolittyHasherA()` defines it as the bytes for the hash digest output before finalization.
 
 The second argument variable `j` is a pointer to modify the value of the variable `g`.
 
