@@ -136,7 +136,7 @@ Before testing, create a file with the name `file` with `123456789` as the file 
 echo "123456789" > file
 ```
 
-The default file name string can be modified in `src/avolitty-hasher.c` on `line 16`.
+The default file name string can be modified in [test/main.c](https://github.com/avolitty/avolitty-hasher/blob/main/test/main.c) on [line 18](https://github.com/avolitty/avolitty-hasher/blob/main/test/main.c#L18).
 
 An executable binary for testing can be compiled with either `clang` or `gcc`.
 
