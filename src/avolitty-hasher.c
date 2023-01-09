@@ -1,15 +1,17 @@
-void AvolittyHasherA(signed short int *a, signed short int *b, signed short int c, signed short int d, unsigned char *e) {
-	signed short int f = *b + 2;
-	signed short int g = 0;
-	signed short int h = 0;
+void AvolittyHasherA(signed short int *a, signed short int *b, signed short int *c, signed short int d, signed short int e, unsigned char *f) {
+	signed short int g = *b;
+	signed short int h = *c;
+	signed short int i = 0;
+	signed short int j = 0;
 
-	while (d != g) {
-		f = (signed short int) e[g] + (((f >> 1) + f) & 8191) + 2;
-		h = g++ & c;
-		a[h] = (a[h] + f) & 1023;
+	while (e != i) {
+		g = (signed short int) f[i++] + ((((g + 2) >> 1) + g) & 8191) + 2;
+		j = h++ & d;
+		a[j] = (a[j] + g) & 1023;
 	}
 
-	*b = f;
+	*b = g;
+	*c = h;
 	return;
 }
 

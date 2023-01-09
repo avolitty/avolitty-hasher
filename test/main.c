@@ -3,16 +3,18 @@
 
 int main() {
 	FILE *a;
-	size_t b = 1023;
+	size_t b = 1024;
 	size_t c = 1;
 	size_t d = b;
 	signed short int e[16];
 	signed short int f = 16;
 	signed short int g = f;
 	signed short int h = 0;
-	signed short int *i = &g;
-	unsigned char j[1023];
-	signed char k[16];
+	signed short int i = 0;
+	signed short int *j = &g;
+	signed short int *k = &i;
+	unsigned char l[1024];
+	signed char m[16];
 	a = fopen("file", "rb");
 
 	while (f-- != 0) {
@@ -22,17 +24,16 @@ int main() {
 	f = --g;
 
 	while (b == d) {
-		d = fread(j, c, b, a);
-		g = (signed short int) d;
-		AvolittyHasherA(e, i, f, g, j);
+		d = fread(l, c, b, a);
+		h = (signed short int) d;
+		AvolittyHasherA(e, j, k, f, h, l);
 	}
 
 	fclose(a);
-	g = *i;
-	AvolittyHasherB(e, g, ++f, k);
+	AvolittyHasherB(e, g, ++f, m);
 
 	while (f-- != 0) {
-		printf("%c", k[f]);
+		printf("%c", m[f]);
 	}
 
 	return 0;
