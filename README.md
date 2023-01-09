@@ -110,7 +110,7 @@ The sixth argument variable `l` is a pointer to an `unsigned char` array to stor
 
 The default value is an empty array with a default length of `1024`.
 
-The length be modified based on the expected length of file input. If the default length needs to change, it should match the value of the variable `b`.
+The length be modified based on the expected length of file input. If the default length needs to change, it matches the value of the variable `b`.
 
 Changing the default length of `1024` doesn't change digest output values.
 
@@ -126,7 +126,7 @@ The third argument variable `f` is the previous value defined as the output char
 
 The fourth argument variable `m` is a pointer to a `signed char` array to store the hashed bytes after finalization from `AvolittyHasherB()`.
 
-The default value is an empty array with a default length of `16`. As mentioned previously, this value should match the length of `e` and value of `f`.
+The default value is an empty array with a default length of `16`. As mentioned previously, this value matches the length of `e` and value of `f`.
 
 `AvolittyHasherB()` defines it as the finalized hash digest.
 
